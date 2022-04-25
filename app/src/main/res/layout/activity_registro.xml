@@ -90,13 +90,17 @@
             android:layout_marginStart="50dp"
             android:layout_marginEnd="50dp"
             android:hint="Ingrese tu correo"
-            app:boxBackgroundMode="outline">
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="30dp"
+            app:boxCornerRadiusBottomStart="30dp"
+            app:boxCornerRadiusTopEnd="30dp"
+            app:boxCornerRadiusTopStart="30dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etreemail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/botones"
                 android:drawableEnd="@drawable/ic_mail"
                 android:inputType="textEmailAddress"
                 android:padding="15dp" />
@@ -111,14 +115,18 @@
             android:layout_marginTop="15dp"
             android:layout_marginEnd="50dp"
             android:hint="Ingrese tu contraseña"
-            app:boxBackgroundMode="outline">
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="30dp"
+            app:boxCornerRadiusBottomStart="30dp"
+            app:boxCornerRadiusTopEnd="30dp"
+            app:boxCornerRadiusTopStart="30dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etpassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
-                android:background="@drawable/botones"
                 android:drawableEnd="@drawable/ic_lock"
                 android:inputType="textPassword"
                 android:padding="15dp" />
@@ -132,14 +140,18 @@
             android:layout_marginTop="15dp"
             android:layout_marginEnd="50dp"
             android:hint="Reingresa tu contraseña"
-            app:boxBackgroundMode="outline">
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="30dp"
+            app:boxCornerRadiusBottomStart="30dp"
+            app:boxCornerRadiusTopEnd="30dp"
+            app:boxCornerRadiusTopStart="30dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etconfipass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="41dp"
-                android:background="@drawable/botones"
                 android:drawableEnd="@drawable/ic_lock"
                 android:inputType="textPassword"
                 android:padding="15dp" />
@@ -158,12 +170,7 @@
             android:text="Continuar"
             android:textColor="@color/white"
             app:cornerRadius="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etpass"
-            app:layout_constraintVertical_bias="0.45" />
+            android:padding="15dp"/>
 
 
     </LinearLayout>
