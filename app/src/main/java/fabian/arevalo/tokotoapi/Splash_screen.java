@@ -16,10 +16,10 @@ public class Splash_screen extends AppCompatActivity {
 
         //de aca empiza el splash
         new Handler().postDelayed(() -> {
-            Intent intent= new Intent(getApplicationContext(),MainActivity.class);
+            Intent intent= new Intent(getApplicationContext(),Registro.class);
             startActivity(intent);
             finish();
-        },1000);
+        },2000);
 
     }
 }

@@ -6,6 +6,70 @@
     android:layout_height="match_parent"
     tools:context=".Splash_screen">
 
+    <TextView
+        android:id="@+id/tvtokoto"
+        android:layout_width="324dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        android:text="TOKOTO"
+        android:textColor="#F77547"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvsplash"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <TextView
+        android:id="@+id/tvsplash"
+        android:layout_width="294dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="43dp"
+        android:gravity="center"
+        android:text="Bienvenido a Tokoto,Vamos a la tienda !"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/iv1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.956" />
+
+    <ImageView
+        android:id="@+id/iv1"
+        android:layout_width="315dp"
+        android:layout_height="312dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="232dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="55dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnsplash"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/splash_1" />
+
+    <Button
+        android:id="@+id/btnsplash"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="84dp"
+        android:backgroundTint="#F77547"
+        android:text="Continuar"
+        android:textColor="@color/white"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 
 

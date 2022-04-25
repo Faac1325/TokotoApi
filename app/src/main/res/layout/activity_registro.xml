@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Registro">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -20,18 +20,18 @@
         app:layout_constraintVertical_bias="0.039">
 
         <Button
-            android:id="@+id/btnatraslogin"
+            android:id="@+id/btnatrasregistrar"
             android:layout_width="10dp"
             android:layout_height="20dp"
             android:layout_marginEnd="90dp"
             android:background="@drawable/ic_back_icon" />
 
         <TextView
-            android:id="@+id/tviniciosesion"
-            android:layout_width="101dp"
+            android:id="@+id/tvininscribirse"
+            android:layout_width="71dp"
             android:layout_height="19dp"
             android:layout_marginEnd="150dp"
-            android:text="Inicio de Sesión" />
+            android:text="Inscribirse" />
 
 
     </LinearLayout>
@@ -44,35 +44,37 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.193">
+        app:layout_constraintVertical_bias="0.166">
 
         <TextView
-            android:id="@+id/tvbienvenido"
-            android:layout_width="289dp"
-            android:layout_height="53dp"
-            android:text="Bienvenido de nuevo"
+            android:id="@+id/tvregistrar"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Registrar Cuenta"
             android:textColor="@color/black"
-            android:textSize="30dp"
-            android:textStyle="bold" />
+            android:textSize="35dp"
+            android:textStyle="bold"
+            android:gravity="center"/>
 
         <TextView
-            android:id="@+id/tvtextobienvenido"
-            android:layout_width="294dp"
-            android:layout_height="50dp"
+            android:id="@+id/tvtextregistrar"
+            android:layout_width="215dp"
+            android:layout_height="44dp"
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:text="Inicie sesión con su correo electrónico y contraseña o continúe con las redes sociales" />
+            android:text="Complete sus datos o continúe con las redes sociales" />
 
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="405dp"
-        android:layout_height="335dp"
+        android:layout_width="406dp"
+        android:layout_height="347dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -80,24 +82,24 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.699">
+        app:layout_constraintVertical_bias="0.674">
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="50dp"
             android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:hint="Ingrese tu correo"
             app:boxBackgroundMode="outline">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etmail"
+                android:id="@+id/etreemail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/botones"
                 android:drawableEnd="@drawable/ic_mail"
-                android:padding="15dp"
-                android:background="@drawable/botones"
                 android:inputType="textEmailAddress"
-                android:hint="Ingrese tu correo"/>
+                android:padding="15dp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -105,66 +107,53 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="50dp"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="50dp"
+            android:hint="Ingrese tu contraseña"
             app:boxBackgroundMode="outline">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etpass"
+                android:id="@+id/etpassword"
                 android:layout_width="match_parent"
-                android:layout_marginTop="50dp"
                 android:layout_height="wrap_content"
-                android:drawableEnd="@drawable/ic_lock"
-                android:padding="15dp"
+                android:layout_marginTop="50dp"
                 android:background="@drawable/botones"
+                android:drawableEnd="@drawable/ic_lock"
                 android:inputType="textPassword"
-                android:hint="Ingrese tu contraseña"/>
+                android:padding="15dp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <LinearLayout
-            android:id="@+id/linearLayout4"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:gravity="center"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.529">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="50dp"
+            android:hint="Reingresa tu contraseña"
+            app:boxBackgroundMode="outline">
 
-            <CheckBox
-                android:id="@+id/checkBox"
-                android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="20dp"
-                android:text="Recuerdame"
-                android:textColor="#999999"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tvolvido"
-                android:layout_width="179dp"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etconfipass"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="4dp"
-                android:text="Has olvidado tu contraseña"
-                android:textStyle="bold" />
+                android:layout_marginTop="41dp"
+                android:background="@drawable/botones"
+                android:drawableEnd="@drawable/ic_lock"
+                android:inputType="textPassword"
+                android:padding="15dp" />
 
-
-        </LinearLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/btnlogin"
+            android:id="@+id/btnregistrar"
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
-            android:layout_marginEnd="50dp"
             android:layout_marginTop="30dp"
+            android:layout_marginEnd="50dp"
             android:backgroundTint="#F77547"
             android:text="Continuar"
             android:textColor="@color/white"
@@ -180,30 +169,17 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/tvcuenta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:text="No tienes una cuenta?"
+        android:id="@+id/tvregistro1"
+        android:layout_width="290dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="52dp"
+        android:text="Al continuar su confirmación de que está de acuerdo con nuestro término y condición"
         android:textColor="#999999"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/tvinscribete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:text="Regístrate !"
-        android:textColor="#F77547"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.13"
-        app:layout_constraintStart_toEndOf="@+id/tvcuenta" />
 
     <LinearLayout
         android:id="@+id/linearLayout5"
@@ -218,7 +194,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.898">
+        app:layout_constraintVertical_bias="0.864">
 
         <ImageButton
             android:id="@+id/button4"
@@ -243,7 +219,5 @@
             android:background="@drawable/ic_twitter" />
 
     </LinearLayout>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
