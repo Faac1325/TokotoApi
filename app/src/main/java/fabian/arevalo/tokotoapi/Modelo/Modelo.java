@@ -3,6 +3,7 @@ package fabian.arevalo.tokotoapi.Modelo;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.widget.Toast;
@@ -12,14 +13,17 @@ import java.util.Date;
 
 import fabian.arevalo.tokotoapi.Conexionbd.AdminSQLiteOpenHelper;
 import fabian.arevalo.tokotoapi.Interfaces.Interfaces;
+import fabian.arevalo.tokotoapi.Vista.Inicio;
 
 public class Modelo implements Interfaces.ModeloRegistro {
 
     Interfaces.PresentadorRegistro presenter;
     private String msgError="";
     private Context context2;
+    private Cursor fila;
 
     public Modelo(Interfaces.PresentadorRegistro presenter) {
+
         this.presenter = presenter;
     }
 
@@ -111,6 +115,56 @@ public class Modelo implements Interfaces.ModeloRegistro {
         } catch (Exception e) {
         }
         return true;
+    }
+    @Override
+    public void recibirDatosLogin(String email, String pass2, Context context) {
+
+        context2=context;
+
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(context, "registros", null, 1);
+        SQLiteDatabase db = admin.getWritableDatabase();
+
+        if(validarcampos(email,pass2)){
+            fila = db.rawQuery("select correo, clave from userbd where correo='" + email + "' and clave='" + pass2 + "'", null);
+            try {
+                //busca por registro
+                if (fila.moveToFirst()) {
+                    String correo = fila.getString(0);
+                    String clave = fila.getString(1);
+
+
+                    if (email.equals(correo) && pass2.equals(clave)) {
+                        msgError="Bienvenido";
+                        presenter.mostrarMensaje(msgError);
+
+                    }
+                } else {
+                    msgError="Datos incorrectos";
+                    presenter.mostrarMensaje(msgError);
+                }
+            } catch (Exception e) {
+                msgError="Error";
+                presenter.mostrarMensaje(msgError);
+            }
+        }
+
+    }
+
+    private boolean validarcampos(String campo1, String campo2) {
+
+        boolean camposllenos = true;
+        if (campo1.trim().isEmpty()) {
+            camposllenos = false;
+            msgError="Campo email vacio";
+            presenter.mostrarMensaje(msgError);
+
+        }
+        if (campo2.trim().isEmpty()) {
+            camposllenos = false;
+            msgError="Campo de contraseña vacio";
+            presenter.mostrarMensaje(msgError);
+        }
+        return camposllenos;
     }
 
 }

@@ -16,7 +16,7 @@ import fabian.arevalo.tokotoapi.R;
 
 public class Registro extends AppCompatActivity implements Interfaces.VistaRegistro {
     EditText etreemail, etpassword, etconfirpass;
-    Button btnregistrar,btnatras;
+    Button btnregistrar,btnatrasregistrar;
     Interfaces.PresentadorRegistro presenter;
     Context context;
 
@@ -28,13 +28,22 @@ public class Registro extends AppCompatActivity implements Interfaces.VistaRegis
         etpassword = findViewById(R.id.etpassword);
         etconfirpass = findViewById(R.id.etconfipass);
         btnregistrar = findViewById(R.id.btnregistrar);
-        btnatras=findViewById(R.id.btnatrasregistrar);
+        btnatrasregistrar=findViewById(R.id.btnatrasregistrar);
         presenter = new Presentador(this);
 
         btnregistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 presenter.recibirDatos(etreemail.getText().toString().trim(),etpassword.getText().toString().trim(),etconfirpass.getText().toString().trim(),Registro.this);
+                ;
+            }
+        });
+
+        btnatrasregistrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i =new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(i);
                 ;
             }
         });
@@ -51,5 +60,10 @@ public class Registro extends AppCompatActivity implements Interfaces.VistaRegis
         startActivity(i);
         }
 
+    }
+    //Bloquear atras
+    @Override
+    public void onBackPressed() {
+        /*super.onBackPressed();*/
     }
 }

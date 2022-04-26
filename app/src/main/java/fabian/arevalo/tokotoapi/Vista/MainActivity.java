@@ -2,19 +2,25 @@ package fabian.arevalo.tokotoapi.Vista;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import fabian.arevalo.tokotoapi.Interfaces.Interfaces;
+import fabian.arevalo.tokotoapi.Presentador.Presentador;
 import fabian.arevalo.tokotoapi.R;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Interfaces.VistaRegistro{
     EditText etmail,etpass;
-    Button btnlogin;
+    Button btnlogin,btnatraslogin;
     TextView tvinscribete;
+    Context context;
+    Interfaces.PresentadorRegistro presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
         etpass=findViewById(R.id.etpass);
         btnlogin=findViewById(R.id.btnlogin);
         tvinscribete=findViewById(R.id.tvinscribete);
+        btnatraslogin=findViewById(R.id.btnatraslogin);
+
+        presenter = new Presentador(this);
+
 
         //Este nos envia de MainActivity a Registro
         tvinscribete.setOnClickListener(new View.OnClickListener() {
@@ -36,5 +46,38 @@ public class MainActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
+        btnlogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                presenter.recibirDatosLogin(etmail.getText().toString().trim(),etpass.getText().toString().trim(),MainActivity.this);
+                ;
+            }
+        });
+        btnatraslogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i= new Intent(MainActivity.this,Splash_screen.class);
+                startActivity(i);
+
+            }
+        });
     }
+
+    @Override
+    public void mostrarMensaje(String msg) {
+        Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
+        if(msg.equals("Bienvenido")) {
+            Intent i= new Intent(MainActivity.this,Inicio.class);
+            startActivity(i);
+        }
+
+    }
+    //Bloquear atras
+    @Override
+    public void onBackPressed() {
+        /*super.onBackPressed();*/
+    }
+
+
 }

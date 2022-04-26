@@ -18,10 +18,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.039">
 
+        <Button
+            android:id="@+id/btnatrasinicio"
+            android:layout_width="15dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/ic_back_icon" />
+
         <SearchView
             android:layout_width="183dp"
             android:layout_height="match_parent"
-            android:layout_marginEnd="40dp"
+            android:layout_marginEnd="20dp"
             app:cardBackgroundColor="#ECECED"
             android:background="@drawable/botones">
 
