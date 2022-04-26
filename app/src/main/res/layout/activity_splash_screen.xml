@@ -8,13 +8,13 @@
 
     <TextView
         android:id="@+id/tvtokoto"
-        android:layout_width="324dp"
-        android:layout_height="57dp"
+        android:layout_width="311dp"
+        android:layout_height="66dp"
         android:layout_marginTop="60dp"
         android:gravity="center"
         android:text="TOKOTO"
         android:textColor="#F77547"
-        android:textSize="50dp"
+        android:textSize="55sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/tvsplash"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,52 +26,71 @@
 
     <TextView
         android:id="@+id/tvsplash"
-        android:layout_width="294dp"
-        android:layout_height="50dp"
+        android:layout_width="332dp"
+        android:layout_height="33dp"
         android:layout_marginBottom="43dp"
         android:gravity="center"
-        android:text="Bienvenido a Tokoto,Vamos a la tienda !"
+        android:text="¡ Bienvenido a Tokoto,Vamos a la tienda !"
+        android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/iv1"
+        app:layout_constraintBottom_toTopOf="@+id/cardView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.956" />
+        app:layout_constraintVertical_bias="0.823" />
 
-    <ImageView
-        android:id="@+id/iv1"
-        android:layout_width="315dp"
-        android:layout_height="312dp"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="305dp"
+        android:layout_height="350dp"
         android:layout_marginStart="100dp"
         android:layout_marginTop="232dp"
         android:layout_marginEnd="100dp"
-        android:layout_marginBottom="55dp"
+        android:layout_marginBottom="56dp"
+        app:cardCornerRadius="5dp"
         app:layout_constraintBottom_toTopOf="@+id/btnsplash"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/splash_1" />
+        app:srcCompat="@drawable/splash_1">
+
+        <com.smarteist.autoimageslider.SliderView
+            android:id="@+id/sliderView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:sliderAnimationDuration="600"
+            app:sliderAutoCycleDirection="back_and_forth"
+            app:sliderAutoCycleEnabled="true"
+            app:sliderIndicatorAnimationDuration="600"
+            app:sliderIndicatorGravity="center_horizontal|bottom"
+            app:sliderIndicatorMargin="15dp"
+            app:sliderIndicatorOrientation="horizontal"
+            app:sliderIndicatorPadding="3dp"
+            app:sliderIndicatorRadius="2dp"
+            app:sliderIndicatorSelectedColor="#F77547"
+            app:sliderIndicatorUnselectedColor="#c1c1c1"
+            app:sliderScrollTimeInSec="2"
+            app:sliderStartAutoCycle="true" />
+    </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/btnsplash"
         style="?attr/materialButtonOutlinedStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="84dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="40dp"
         android:backgroundTint="#F77547"
+        android:padding="15dp"
         android:text="Continuar"
         android:textColor="@color/white"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        android:padding="15dp"/>
-
-
+        app:layout_constraintStart_toStartOf="parent"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
