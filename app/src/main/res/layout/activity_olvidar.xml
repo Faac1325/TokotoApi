@@ -116,14 +116,12 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="50dp"
             android:backgroundTint="#F77547"
+            android:onClick="recuperar"
             android:padding="15dp"
             android:text="Recuperar"
-            android:onClick="recuperar"
             android:textColor="@color/white"
-            app:cornerRadius="20dp"
-            android:transitionName="buttonSignInTrans"/>
-
-
+            android:transitionName="buttonSignInTrans"
+            app:cornerRadius="20dp" />
 
 
     </LinearLayout>

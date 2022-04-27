@@ -9,15 +9,23 @@ import android.database.sqlite.SQLiteDatabase;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 import fabian.arevalo.tokotoapi.Conexionbd.AdminSQLiteOpenHelper;
 import fabian.arevalo.tokotoapi.Interfaces.Interfaces;
+import fabian.arevalo.tokotoapi.Interfaces.ServicioApi;
 import fabian.arevalo.tokotoapi.Vista.Inicio;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
-public class Modelo implements Interfaces.ModeloRegistro {
+public class Modelo implements Interfaces.ModeloRegistro, Interfaces.ModeloInicio {
 
     Interfaces.PresentadorRegistro presenter;
+    Interfaces.PresentadorInicio presentadorInicio;
     private String msgError="";
     private Context context2;
     private Cursor fila;
@@ -25,6 +33,10 @@ public class Modelo implements Interfaces.ModeloRegistro {
     public Modelo(Interfaces.PresentadorRegistro presenter) {
 
         this.presenter = presenter;
+    }
+
+    public Modelo(Interfaces.PresentadorInicio presentadorInicio) {
+        this.presentadorInicio = presentadorInicio;
     }
 
     @Override
@@ -168,4 +180,47 @@ public class Modelo implements Interfaces.ModeloRegistro {
         return camposllenos;
     }
 
+    @Override
+    public void recibirBusqueda(String q) {
+        //Se buscan los datos con retrofit
+
+        System.out.println("diego "+q);
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://api.mercadolibre.com/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        ServicioApi service=retrofit.create(ServicioApi.class);
+        Call<Producto> call=service.obtenerProductos(q);
+
+        call.enqueue(new Callback<Producto>() {
+            @Override
+            public void onResponse(Call<Producto> call, Response<Producto> response) {
+
+                if(!response.isSuccessful()){
+                    /*procesoFallido();*/
+
+                    return;
+                }
+
+                Producto datosProducto= response.body();
+                ArrayList<ProductoResults> productos = datosProducto.getResults();
+
+                if(datosProducto!=null){
+                    presentadorInicio.procesoExitoso(productos);
+                    System.out.println("Proceso exitoso!");
+
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<Producto> call, Throwable t) {
+               /* procesoFallido();
+                mensajeError();*/
+
+            }
+        });
+    }
 }

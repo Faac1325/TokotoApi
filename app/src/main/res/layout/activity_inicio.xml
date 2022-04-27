@@ -26,17 +26,16 @@
             android:layout_marginEnd="15dp"
             android:background="@drawable/ic_back_icon" />
 
-        <SearchView
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search"
             android:layout_width="183dp"
             android:layout_height="match_parent"
             android:layout_marginEnd="20dp"
             app:cardBackgroundColor="#ECECED"
             android:background="@drawable/botones">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </SearchView>
+
+        </androidx.appcompat.widget.SearchView>
 
         <androidx.cardview.widget.CardView
             android:layout_width="40dp"

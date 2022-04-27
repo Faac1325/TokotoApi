@@ -9,22 +9,10 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.regex.Pattern;
-
 import fabian.arevalo.tokotoapi.Conexionbd.AdminSQLiteOpenHelper;
 import fabian.arevalo.tokotoapi.Vista.MainActivity;
 
@@ -66,12 +54,16 @@ public class Olvidar extends AppCompatActivity {
         SQLiteDatabase db = admin.getWritableDatabase();
         String email = emailolvidar.getText().toString().trim();
 
-        Cursor fila = db.rawQuery("select correo,clave from userbd where correo='" + email + "'", null);
+        if(emailolvidar.getText().toString().isEmpty()){
+            Toast.makeText(this, "Campo email vacio", Toast.LENGTH_SHORT).show();
+        }else{
+            Cursor fila = db.rawQuery("select correo,clave from userbd where correo='" + email + "'", null);
 
             if (fila.moveToFirst()) {
 
                 String correo = fila.getString(0);
                 String password = fila.getString(1);
+
 
                 if (correo.equals(email)) {
 
@@ -79,12 +71,12 @@ public class Olvidar extends AppCompatActivity {
 
                     Toast.makeText(this, ""+password, Toast.LENGTH_SHORT).show();
 
-
-
-
                 }
             }
-    }
+        }
+
+            }
+
 
 
 
