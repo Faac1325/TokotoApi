@@ -34,13 +34,18 @@ public class Presentador implements Interfaces.PresentadorRegistro, Interfaces.P
 
     @Override
     public void mostrarMensaje(String msg) {
-
         view.mostrarMensaje(msg);
     }
 
     @Override
     public void recibirDatosLogin(String email, String pass2, Context context) {
         model.recibirDatosLogin(email,pass2,context);
+    }
+
+    @Override
+    public void recibirDatosRecuperar(String email, Context context) {
+        model.recibirDatosRecuperar(email,context);
+
     }
 
     @Override

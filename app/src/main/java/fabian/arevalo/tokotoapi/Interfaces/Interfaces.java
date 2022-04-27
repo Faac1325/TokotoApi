@@ -19,6 +19,7 @@ public interface Interfaces {
         void mostrarMensaje(String msg);
 
         void recibirDatosLogin(String email,String pass2,Context context);
+        void recibirDatosRecuperar(String email,Context context);
     }
 
     interface ModeloRegistro{
@@ -26,6 +27,8 @@ public interface Interfaces {
         void recibirDatos(String correo, String pass, String confirmPass, Context context);
 
         void recibirDatosLogin(String email, String pass2, Context context);
+
+        void recibirDatosRecuperar(String email,Context context);
     }
     interface VistaInicio {
         void enviarBusqueda(String q);

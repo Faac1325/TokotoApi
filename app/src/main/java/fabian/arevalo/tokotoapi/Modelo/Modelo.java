@@ -163,6 +163,46 @@ public class Modelo implements Interfaces.ModeloRegistro, Interfaces.ModeloInici
 
     }
 
+
+
+    @Override
+    public void recibirDatosRecuperar(String email,Context context) {
+
+        context2=context;
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(context, "registros", null, 1);
+        SQLiteDatabase db = admin.getWritableDatabase();
+
+
+        if (email.isEmpty()) {
+            msgError="El campo email está vacio";
+            presenter.mostrarMensaje(msgError);
+        } else{
+            if(!isEmailValid(email)){
+                msgError="Campo email invalido";
+                presenter.mostrarMensaje(msgError);
+
+            }else{
+                Cursor fila = db.rawQuery("select correo,clave from userbd where correo='" + email + "'", null);
+
+                if (fila.moveToFirst()) {
+
+                    String correo = fila.getString(0);
+                    String password = fila.getString(1);
+
+
+                    if (correo.equals(email)) {
+                        msgError="La contraseña es: "+password;
+                        presenter.mostrarMensaje(msgError);
+
+
+                    }
+                }
+            }
+
+            }
+        }
+
+
     private boolean validarcampos(String campo1, String campo2) {
 
         boolean camposllenos = true;
@@ -219,7 +259,6 @@ public class Modelo implements Interfaces.ModeloRegistro, Interfaces.ModeloInici
             public void onFailure(Call<Producto> call, Throwable t) {
                /* procesoFallido();
                 mensajeError();*/
-
             }
         });
     }
