@@ -144,7 +144,7 @@
             app:cardCornerRadius="10dp">
 
             <ImageButton
-                android:id="@+id/btnflash"
+                android:id="@+id/btnoferta"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
@@ -159,7 +159,7 @@
             app:cardCornerRadius="10dp">
 
             <ImageButton
-                android:id="@+id/btnbill"
+                android:id="@+id/btnfactura"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
@@ -175,7 +175,7 @@
             app:cardCornerRadius="10dp">
 
             <ImageButton
-                android:id="@+id/btngames"
+                android:id="@+id/btnjuegos"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
@@ -190,7 +190,7 @@
             app:cardCornerRadius="10dp">
 
             <ImageButton
-                android:id="@+id/btnndaily"
+                android:id="@+id/btnregalo"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
@@ -206,7 +206,7 @@
             app:cardCornerRadius="10dp">
 
             <ImageButton
-                android:id="@+id/btnmore"
+                android:id="@+id/btnmas"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
@@ -218,13 +218,12 @@
 
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="288dp"
+        android:layout_width="290dp"
         android:layout_height="19dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.569"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.404">
@@ -232,26 +231,27 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:text="Oferta " />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="15dp"
             android:text="Factura" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="18dp"
             android:text="Juego" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:text="Regalo diario" />
+            android:layout_marginEnd="25dp"
+            android:text="Regalo" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -279,6 +279,72 @@
 
     <LinearLayout
         android:id="@+id/linearLayout6"
+        android:layout_width="411dp"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.659">
+
+        <TextView
+            android:id="@+id/tvinicio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="90dp"
+            android:text="Productos populares"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/tvinicio2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="Ver más" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="410dp"
+        android:layout_height="136dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.83">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="99dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:clickable="true"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="15dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/RecyclerId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout8"
         android:layout_width="351dp"
         android:layout_height="50dp"
         android:background="@drawable/botones"
@@ -289,7 +355,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.951">
+        app:layout_constraintVertical_bias="0.96">
 
         <androidx.cardview.widget.CardView
             android:layout_width="40dp"
@@ -330,7 +396,7 @@
             app:cardCornerRadius="10dp">
 
             <ImageButton
-                android:id="@+id/btnmesaje"
+                android:id="@+id/btnmensaje"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"

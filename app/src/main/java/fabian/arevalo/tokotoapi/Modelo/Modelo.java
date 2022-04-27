@@ -171,7 +171,7 @@ public class Modelo implements Interfaces.ModeloRegistro, Interfaces.ModeloInici
         context2=context;
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(context, "registros", null, 1);
         SQLiteDatabase db = admin.getWritableDatabase();
-
+        System.out.println("dieog email "+email);
 
         if (email.isEmpty()) {
             msgError="El campo email está vacio";
@@ -197,9 +197,13 @@ public class Modelo implements Interfaces.ModeloRegistro, Interfaces.ModeloInici
 
                     }
                 }
+
             }
 
             }
+        msgError="Correo no existe";
+        System.out.println("dieog modelo "+msgError);
+        presenter.mostrarMensaje(msgError);
         }
 
 

@@ -1,4 +1,4 @@
 package fabian.arevalo.tokotoapi.Adaptadores;
 
-public class AdaptadorInicio  {
+public class AdaptadorCategorias {
 }

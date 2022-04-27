@@ -76,10 +76,11 @@ public class Olvidar extends AppCompatActivity implements Interfaces.VistaRegist
 
     @Override
     public void mostrarMensaje(String msg) {
-        Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
-        if(msg.equals("")) {
-            Toast.makeText(context, ""+pass, Toast.LENGTH_SHORT).show();
-        }
+    System.out.println("dieog"+msg);
+            Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
+
+
+
 
     }
 }
