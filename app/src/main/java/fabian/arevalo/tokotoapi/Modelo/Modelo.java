@@ -36,6 +36,7 @@ public class Modelo implements Interfaces.ModeloRegistro {
 
 
 
+
                     if (correo.isEmpty()) {
                         msgError="El campo email está vacio";
                         presenter.mostrarMensaje(msgError);

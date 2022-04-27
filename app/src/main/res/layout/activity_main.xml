@@ -154,7 +154,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvolvido"
+                android:id="@+id/tvolvidar"
                 android:layout_width="179dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"

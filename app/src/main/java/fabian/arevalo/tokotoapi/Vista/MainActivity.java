@@ -12,13 +12,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import fabian.arevalo.tokotoapi.Interfaces.Interfaces;
+import fabian.arevalo.tokotoapi.Olvidar;
 import fabian.arevalo.tokotoapi.Presentador.Presentador;
 import fabian.arevalo.tokotoapi.R;
 
 public class MainActivity extends AppCompatActivity implements Interfaces.VistaRegistro{
     EditText etmail,etpass;
     Button btnlogin,btnatraslogin;
-    TextView tvinscribete;
+    TextView tvinscribete,tvolvidar;
     Context context;
     Interfaces.PresentadorRegistro presenter;
 
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements Interfaces.VistaR
         btnlogin=findViewById(R.id.btnlogin);
         tvinscribete=findViewById(R.id.tvinscribete);
         btnatraslogin=findViewById(R.id.btnatraslogin);
-
+        tvolvidar=findViewById(R.id.tvolvidar);
         presenter = new Presentador(this);
 
 
@@ -57,8 +58,19 @@ public class MainActivity extends AppCompatActivity implements Interfaces.VistaR
         btnatraslogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i= new Intent(MainActivity.this,Splash_screen.class);
+                Intent i= new Intent(MainActivity.this, Splash_screen.class);
                 startActivity(i);
+                onBackPressed();
+
+            }
+        });
+
+        tvolvidar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i= new Intent(MainActivity.this,Olvidar.class);
+                startActivity(i);
+                finish();
 
             }
         });
