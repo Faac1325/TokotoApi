@@ -25,7 +25,6 @@ public interface Interfaces {
     interface ModeloRegistro{
 
         void recibirDatos(String correo, String pass, String confirmPass, Context context);
-
         void recibirDatosLogin(String email, String pass2, Context context);
 
         void recibirDatosRecuperar(String email,Context context);

@@ -25,6 +25,7 @@ import fabian.arevalo.tokotoapi.R;
 public class  Inicio extends AppCompatActivity implements SearchView.OnQueryTextListener, Interfaces.VistaInicio {
     Button btnatrasinicio;
     ImageButton btnoferta,btnfactura,btnjuegos,btnregalo,btnmas,btnnotificacion,btnhome,btnfavorito,btnmensaje,btnusuario;
+
     androidx.appcompat.widget.SearchView search;
     private AdaptadorInicio adaptadorInicio;
     private RecyclerView recyclerView;
@@ -48,6 +49,7 @@ public class  Inicio extends AppCompatActivity implements SearchView.OnQueryText
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
+
         search= findViewById(R.id.search);
         search.setOnQueryTextListener(this);
 

@@ -6,18 +6,52 @@
     android:layout_height="match_parent"
     tools:context=".Vista.Descripcion">
 
-    <ImageView
-        android:id="@+id/atras"
-        android:layout_width="30dp"
-        android:layout_height="40dp"
-        android:src="@drawable/ic_back_icon"
-        android:layout_margin="6dp"></ImageView>
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="10dp">
+        <ImageView
+            android:id="@+id/atrasdescripcion"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_back_icon"
+            android:layout_margin="6dp"
+            android:padding="10dp"></ImageView>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="320dp"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:text="4.5"
+            android:gravity="center"
+            android:paddingStart="5dp"
+            android:textStyle="bold"></TextView>
+
+        <ImageView
+            android:id="@+id/corazon"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="40dp"
+            android:src="@drawable/ic_star_icon"
+            android:paddingEnd="5dp"></ImageView>
+
+    </androidx.cardview.widget.CardView>
 
     <ImageView
         android:id="@+id/imagen"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="210dp"
         android:src="@mipmap/ic_launcher"></ImageView>
 
     <LinearLayout
@@ -81,14 +115,20 @@
 
     </androidx.recyclerview.widget.RecyclerView>
 
+
     <Button
         android:id="@+id/btncomprar"
+        style="?attr/materialButtonOutlinedStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="600dp"
+        android:layout_marginTop="640dp"
         android:layout_marginEnd="40dp"
-        android:text="Comprar" />
+        android:backgroundTint="#F77547"
+        android:padding="15dp"
+        android:text="Continuar"
+        android:textColor="@color/white"
+        app:cornerRadius="20dp" />
 
 
 </RelativeLayout>

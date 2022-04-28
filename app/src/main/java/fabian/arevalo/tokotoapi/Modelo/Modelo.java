@@ -226,10 +226,8 @@ public class Modelo implements Interfaces.ModeloRegistro, Interfaces.ModeloInici
 
     @Override
     public void recibirBusqueda(String q) {
+
         //Se buscan los datos con retrofit
-
-        System.out.println("diego "+q);
-
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://api.mercadolibre.com/")
                 .addConverterFactory(GsonConverterFactory.create())

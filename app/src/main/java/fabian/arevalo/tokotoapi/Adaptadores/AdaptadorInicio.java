@@ -43,6 +43,7 @@ public class AdaptadorInicio extends RecyclerView.Adapter<AdaptadorInicio.ViewHo
         holder.url= results.get(position).getThumbnail().replaceFirst("http","https");
 
         Glide.with(context).load(holder.url).diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.foto);
+
         holder.itemView.setOnClickListener(view->{
 
             Intent intent= new Intent(context, Descripcion.class);

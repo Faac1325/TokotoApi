@@ -23,8 +23,7 @@ public class Descripcion extends AppCompatActivity {
 
     private Bundle bundle;
     private RecyclerView recyclerDescripcion;
-    private AdapterDescripcion adaptadorDescripcionProducto;
-
+    private AdapterDescripcion adaptadorDescripcion;
     private TextView titulo, precio;
     private ImageView imagen, atras;
     ArrayList<ProductoAttributes> attributes;
@@ -40,7 +39,8 @@ public class Descripcion extends AppCompatActivity {
         titulo= findViewById(R.id.titulo);
         precio= findViewById(R.id.precio);
         imagen= findViewById(R.id.imagen);
-        atras= findViewById(R.id.atras);
+        atras= findViewById(R.id.atrasdescripcion);
+
         attributes=(ArrayList<ProductoAttributes>)bundle.getSerializable("caracteristicas");
         recyclerDescripcion.setLayoutManager(new LinearLayoutManager(this));
         AdapterDescripcion adapter= new AdapterDescripcion(attributes,this);
