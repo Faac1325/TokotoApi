@@ -3,6 +3,8 @@ package fabian.arevalo.tokotoapi.Vista;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -14,6 +16,7 @@ import android.widget.ImageButton;
 
 import java.util.ArrayList;
 
+import fabian.arevalo.tokotoapi.Adaptadores.AdaptadorInicio;
 import fabian.arevalo.tokotoapi.Interfaces.Interfaces;
 import fabian.arevalo.tokotoapi.Modelo.ProductoResults;
 import fabian.arevalo.tokotoapi.Presentador.Presentador;
@@ -23,6 +26,8 @@ public class  Inicio extends AppCompatActivity implements SearchView.OnQueryText
     Button btnatrasinicio;
     ImageButton btnoferta,btnfactura,btnjuegos,btnregalo,btnmas,btnnotificacion,btnhome,btnfavorito,btnmensaje,btnusuario;
     androidx.appcompat.widget.SearchView search;
+    private AdaptadorInicio adaptadorInicio;
+    private RecyclerView recyclerView;
 
     private Presentador presenter;
 
@@ -57,6 +62,7 @@ public class  Inicio extends AppCompatActivity implements SearchView.OnQueryText
         btnfavorito=findViewById(R.id.btnfavorito);
         btnmensaje=findViewById(R.id.btnmensaje);
         btnusuario=findViewById(R.id.btnusuario);
+        recyclerView = findViewById(R.id.recycler2);
 
 
 
@@ -149,20 +155,6 @@ public class  Inicio extends AppCompatActivity implements SearchView.OnQueryText
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     //Metodo salir
     public void tvsalir(){
         btnatrasinicio.setOnClickListener(new View.OnClickListener() {
@@ -221,6 +213,11 @@ public class  Inicio extends AppCompatActivity implements SearchView.OnQueryText
 
     @Override
     public void mostrarProductos(ArrayList<ProductoResults> productos) {
+        adaptadorInicio= new AdaptadorInicio(productos,this);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(adaptadorInicio);
 
     }
 }
