@@ -2,20 +2,14 @@ package fabian.arevalo.tokotoapi.Modelo;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.widget.Toast;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 import fabian.arevalo.tokotoapi.Conexionbd.AdminSQLiteOpenHelper;
 import fabian.arevalo.tokotoapi.Interfaces.Interfaces;
 import fabian.arevalo.tokotoapi.Interfaces.ServicioApi;
-import fabian.arevalo.tokotoapi.Vista.Inicio;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -26,7 +20,7 @@ public class Modelo implements Interfaces.ModeloRegistro, Interfaces.ModeloInici
 
     Interfaces.PresentadorRegistro presenter;
     Interfaces.PresentadorInicio presentadorInicio;
-    private String msgError="";
+    private String msgError = "";
     private Context context2;
     private Cursor fila;
 
@@ -42,66 +36,64 @@ public class Modelo implements Interfaces.ModeloRegistro, Interfaces.ModeloInici
     @Override
     public void recibirDatos(String correo, String pass, String confirmPass, Context context) {
 
-        context2=context;
-        AdminSQLiteOpenHelper admin= new AdminSQLiteOpenHelper(context,"registros", null, 1);
-        SQLiteDatabase db= admin.getWritableDatabase();
+        context2 = context;
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(context, "registros", null, 1);
+        SQLiteDatabase db = admin.getWritableDatabase();
 
 
+        if (correo.isEmpty()) {
+            msgError = "El campo email está vacio";
+            presenter.mostrarMensaje(msgError);
+        } else {
+            if (!isEmailValid(correo)) {
+                msgError = "Campo email invalido";
+                presenter.mostrarMensaje(msgError);
 
+            } else {
+                if (!validarcorreo(correo)) {
+                    msgError = "Ingrese otro email";
+                    presenter.mostrarMensaje(msgError);
 
-                    if (correo.isEmpty()) {
-                        msgError="El campo email está vacio";
+                } else {
+                    if (pass.trim().isEmpty()) {
+                        msgError = "El campo contraseña está vacio";
                         presenter.mostrarMensaje(msgError);
-                    } else{
-                        if(!isEmailValid(correo)){
-                            msgError="Campo email invalido";
+
+                    } else {
+                        if (confirmPass.isEmpty()) {
+                            msgError = "El campo contraseña está vacio";
                             presenter.mostrarMensaje(msgError);
 
-                        }else{
-                            if (!validarcorreo(correo)) {
-                                msgError="Ingrese otro email";
+                        } else {
+                            if (!pass.equals(confirmPass)) {
+                                msgError = "las contraseñas no coinciden";
                                 presenter.mostrarMensaje(msgError);
 
-                            }else{
-                                if (pass.trim().isEmpty()) {
-                                    msgError="El campo contraseña está vacio";
+                            } else {
+                                if (pass.length() < 6 && confirmPass.length() < 6) {
+                                    msgError = "las contraseñas deben tener mas de 6 caracteres";
                                     presenter.mostrarMensaje(msgError);
 
-                                }else{
-                                    if (confirmPass.isEmpty()) {
-                                        msgError="El campo contraseña está vacio";
-                                        presenter.mostrarMensaje(msgError);
+                                } else {
 
-                                    }else{
-                                        if (!pass.equals(confirmPass)) {
-                                            msgError="las contraseñas no coinciden";
-                                            presenter.mostrarMensaje(msgError);
-
-                                        }else{
-                                            if (pass.length()<6 && confirmPass.length()<6){
-                                                msgError="las contraseñas deben tener mas de 6 caracteres";
-                                                presenter.mostrarMensaje(msgError);
-
-                                            }else{
-
-                                                ContentValues registro = new ContentValues();
-                                                registro.put("correo", correo);
-                                                registro.put("clave", pass);
-                                                db.insert("userbd", null, registro);
-                                                db.close();
-                                                msgError="Usuario registrado exitosamente";
-                                                presenter.mostrarMensaje(msgError);
+                                    ContentValues registro = new ContentValues();
+                                    registro.put("correo", correo);
+                                    registro.put("clave", pass);
+                                    db.insert("userbd", null, registro);
+                                    db.close();
+                                    msgError = "Usuario registrado exitosamente";
+                                    presenter.mostrarMensaje(msgError);
 
 
-                                            }
-
-                                        }
-                                    }
                                 }
-                            }
 
+                            }
                         }
                     }
+                }
+
+            }
+        }
 
 
     }
@@ -111,17 +103,14 @@ public class Modelo implements Interfaces.ModeloRegistro, Interfaces.ModeloInici
     }
 
     public boolean validarcorreo(String email) {
-
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(context2, "registros", null, 1);
         SQLiteDatabase db = admin.getWritableDatabase();
-
-
         Cursor fila = db.rawQuery("select correo from userbd where correo='" + email + "'", null);
         try {
             if (fila.moveToFirst()) {
                 String correo = fila.getString(0);
                 if (correo.equals(email)) {
-                    msgError="El correo ya esta registrado";
+                    msgError = "El correo ya esta registrado";
                     return false;
                 }
             }
@@ -129,15 +118,14 @@ public class Modelo implements Interfaces.ModeloRegistro, Interfaces.ModeloInici
         }
         return true;
     }
+
     @Override
     public void recibirDatosLogin(String email, String pass2, Context context) {
-
-        context2=context;
-
+        context2 = context;
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(context, "registros", null, 1);
         SQLiteDatabase db = admin.getWritableDatabase();
 
-        if(validarcampos(email,pass2)){
+        if (validarcampos(email, pass2)) {
             fila = db.rawQuery("select correo, clave from userbd where correo='" + email + "' and clave='" + pass2 + "'", null);
             try {
                 //busca por registro
@@ -147,41 +135,39 @@ public class Modelo implements Interfaces.ModeloRegistro, Interfaces.ModeloInici
 
 
                     if (email.equals(correo) && pass2.equals(clave)) {
-                        msgError="Bienvenido";
+                        msgError = "Bienvenido";
                         presenter.mostrarMensaje(msgError);
 
                     }
                 } else {
-                    msgError="Datos incorrectos";
+                    msgError = "Datos incorrectos";
                     presenter.mostrarMensaje(msgError);
                 }
             } catch (Exception e) {
-                msgError="Error";
+                msgError = "Error";
                 presenter.mostrarMensaje(msgError);
             }
         }
 
     }
 
-
-
     @Override
-    public void recibirDatosRecuperar(String email,Context context) {
+    public void recibirDatosRecuperar(String email, Context context) {
 
-        context2=context;
+        context2 = context;
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(context, "registros", null, 1);
         SQLiteDatabase db = admin.getWritableDatabase();
-        System.out.println("dieog email "+email);
+        System.out.println("dieog email " + email);
 
         if (email.isEmpty()) {
-            msgError="El campo email está vacio";
+            msgError = "El campo email está vacio";
             presenter.mostrarMensaje(msgError);
-        } else{
-            if(!isEmailValid(email)){
-                msgError="Campo email invalido";
+        } else {
+            if (!isEmailValid(email)) {
+                msgError = "Campo email invalido";
                 presenter.mostrarMensaje(msgError);
 
-            }else{
+            } else {
                 Cursor fila = db.rawQuery("select correo,clave from userbd where correo='" + email + "'", null);
 
                 if (fila.moveToFirst()) {
@@ -191,7 +177,7 @@ public class Modelo implements Interfaces.ModeloRegistro, Interfaces.ModeloInici
 
 
                     if (correo.equals(email)) {
-                        msgError="La contraseña es: "+password;
+                        msgError = "La contraseña es: " + password;
                         presenter.mostrarMensaje(msgError);
 
 
@@ -200,11 +186,11 @@ public class Modelo implements Interfaces.ModeloRegistro, Interfaces.ModeloInici
 
             }
 
-            }
-        msgError="Correo no existe";
-        System.out.println("dieog modelo "+msgError);
-        presenter.mostrarMensaje(msgError);
         }
+        msgError = "Correo no existe";
+        System.out.println("dieog modelo " + msgError);
+        presenter.mostrarMensaje(msgError);
+    }
 
 
     private boolean validarcampos(String campo1, String campo2) {
@@ -212,13 +198,13 @@ public class Modelo implements Interfaces.ModeloRegistro, Interfaces.ModeloInici
         boolean camposllenos = true;
         if (campo1.trim().isEmpty()) {
             camposllenos = false;
-            msgError="Campo email vacio";
+            msgError = "Campo email vacio";
             presenter.mostrarMensaje(msgError);
 
         }
         if (campo2.trim().isEmpty()) {
             camposllenos = false;
-            msgError="Campo de contraseña vacio";
+            msgError = "Campo de contraseña vacio";
             presenter.mostrarMensaje(msgError);
         }
         return camposllenos;
@@ -233,23 +219,23 @@ public class Modelo implements Interfaces.ModeloRegistro, Interfaces.ModeloInici
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        ServicioApi service=retrofit.create(ServicioApi.class);
-        Call<Producto> call=service.obtenerProductos(q);
+        ServicioApi service = retrofit.create(ServicioApi.class);
+        Call<Producto> call = service.obtenerProductos(q);
 
         call.enqueue(new Callback<Producto>() {
             @Override
             public void onResponse(Call<Producto> call, Response<Producto> response) {
 
-                if(!response.isSuccessful()){
+                if (!response.isSuccessful()) {
                     /*procesoFallido();*/
 
                     return;
                 }
 
-                Producto datosProducto= response.body();
+                Producto datosProducto = response.body();
                 ArrayList<ProductoResults> productos = datosProducto.getResults();
 
-                if(datosProducto!=null){
+                if (datosProducto != null) {
                     presentadorInicio.procesoExitoso(productos);
                     System.out.println("Proceso exitoso!");
 

@@ -1,7 +1,29 @@
 
+i
+9app/src/main/java/fabian/arevalo/tokotoapi/Historial.java,5\4\54cac56ebc41981e8aa256ba536c39723134824c
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+u
+Eapp/src/main/java/fabian/arevalo/tokotoapi/Interfaces/Interfaces.java,c\d\cdba72e3f086c27706cf93874134163177ee294f
+w
+Gapp/src/main/java/fabian/arevalo/tokotoapi/Presentador/Presentador.java,e\8\e84bf11bfe8804770390c903e83e64c66d005d1c
+o
+?app/src/main/java/fabian/arevalo/tokotoapi/Modelo/Producto.java,8\2\825addc3df42c6de6f13b086e464c92902d8f5d7
 y
 Iapp/src/main/java/fabian/arevalo/tokotoapi/Adaptadores/SliderAdapter.java,8\7\877f0abb3e9999af15abaa9ea173781b7d2a5ecd
+{
+Kapp/src/main/java/fabian/arevalo/tokotoapi/Adaptadores/AdaptadorInicio.java,5\0\50a8f1855a535ed3de1267548ba4423d91962de1
+v
+Fapp/src/main/java/fabian/arevalo/tokotoapi/Modelo/ProductoResults.java,6\3\63d9492aea1147929f432e8b62955d6142dea5f8
+y
+Iapp/src/main/java/fabian/arevalo/tokotoapi/Modelo/ProductoAttributes.java,8\b\8ba9e04a7e552fec987bb43f585cde06c59bd645
 
 Oapp/src/main/java/fabian/arevalo/tokotoapi/Adaptadores/AdaptadorCategorias.java,b\f\bf5023d61f98fc645eae633e8b4d86281b820727
+~
+Napp/src/main/java/fabian/arevalo/tokotoapi/Adaptadores/AdapterDescripcion.java,3\7\371017b7c776744997c2668fda0311d787d4cbad
+~
+Napp/src/main/java/fabian/arevalo/tokotoapi/Adaptadores/AdaptadorHistorial.java,d\7\d7410163f71f31b778c31fd25305d54d842a47fe
+v
+Fapp/src/main/java/fabian/arevalo/tokotoapi/Interfaces/ServicioApi.java,6\5\653db9d857b0a42f045b8f84396c52325e2af873
 @
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164

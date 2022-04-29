@@ -31,8 +31,6 @@ public class Olvidar extends AppCompatActivity implements Interfaces.VistaRegist
     Interfaces.PresentadorRegistro presenter;
     Context context;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,21 +38,9 @@ public class Olvidar extends AppCompatActivity implements Interfaces.VistaRegist
 
         btnrecuperar = findViewById(R.id.btnrecuperar);
         emailolvidar = findViewById(R.id.emailolvidar);
-        btnatrasolvidar=findViewById(R.id.btnatrasolvidar);
+
         pass = getIntent().getExtras();
-
         presenter = new Presentador(this);
-
-
-        btnatrasolvidar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i= new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(i);
-                onBackPressed();
-
-            }
-        });
 
         btnrecuperar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,22 +51,13 @@ public class Olvidar extends AppCompatActivity implements Interfaces.VistaRegist
 
 
     }
-
-
-    //Bloquear atras
-    @Override
-    public void onBackPressed() {
-        /*super.onBackPressed();*/
-    }
-
-
     @Override
     public void mostrarMensaje(String msg) {
-    System.out.println("dieog"+msg);
+    System.out.println("fabian"+msg);
             Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
+    }
 
-
-
-
+    public void salirolvidar(View view) {
+        onBackPressed();
     }
 }

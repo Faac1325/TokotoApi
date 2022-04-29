@@ -19,12 +19,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.039">
 
-        <Button
-            android:id="@+id/btnatrasinicio"
-            android:layout_width="15dp"
-            android:layout_height="24dp"
+        <ImageView
+            android:id="@+id/tvsalirinicio"
+            android:layout_width="20dp"
+            android:layout_height="40dp"
             android:layout_marginEnd="15dp"
-            android:background="@drawable/ic_back_icon" />
+            android:onClick="tvsalir"
+            android:background="@drawable/ic_back_icon"
+            tools:ignore="OnClick" />
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/search"
@@ -71,7 +73,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="410dp"
+        android:layout_width="match_parent"
         android:layout_height="125dp"
         android:gravity="center"
         android:orientation="vertical"
@@ -125,7 +127,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="411dp"
+        android:layout_width="match_parent"
         android:layout_height="59dp"
         android:gravity="center"
         android:orientation="horizontal"
@@ -217,7 +219,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="334dp"
+        android:layout_width="match_parent"
         android:layout_height="23dp"
         android:gravity="center"
         android:orientation="horizontal"
@@ -259,13 +261,44 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="5dp"
             android:text="Más" />
+    </LinearLayout>
 
+
+    <LinearLayout
+        android:id="@+id/linearLayout9"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.425">
+
+        <TextView
+            android:id="@+id/tvinicio3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="90dp"
+            android:text="Especial para usted"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvinicio4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="Ver más" />
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout5"
-        android:layout_width="408dp"
+        android:layout_width="match_parent"
         android:layout_height="130dp"
         android:gravity="center"
         android:orientation="vertical"
@@ -285,7 +318,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout6"
-        android:layout_width="411dp"
+        android:layout_width="match_parent"
         android:layout_height="35dp"
         android:gravity="center"
         android:orientation="horizontal"
@@ -318,7 +351,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout7"
-        android:layout_width="410dp"
+        android:layout_width="match_parent"
         android:layout_height="160dp"
         android:gravity="center"
         android:orientation="horizontal"
@@ -338,7 +371,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout8"
-        android:layout_width="351dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/botones"
         android:backgroundTint="#EBF6F5F5"

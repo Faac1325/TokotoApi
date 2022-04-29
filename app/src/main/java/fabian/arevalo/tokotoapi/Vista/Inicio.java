@@ -23,12 +23,13 @@ import fabian.arevalo.tokotoapi.Presentador.Presentador;
 import fabian.arevalo.tokotoapi.R;
 
 public class  Inicio extends AppCompatActivity implements SearchView.OnQueryTextListener, Interfaces.VistaInicio {
-    Button btnatrasinicio;
+
     ImageButton btnoferta,btnfactura,btnjuegos,btnregalo,btnmas,btnnotificacion,btnhome,btnfavorito,btnmensaje,btnusuario;
 
     androidx.appcompat.widget.SearchView search;
     private AdaptadorInicio adaptadorInicio;
     private RecyclerView recyclerView;
+    private boolean cargarDatos;
 
     private Presentador presenter;
 
@@ -53,7 +54,6 @@ public class  Inicio extends AppCompatActivity implements SearchView.OnQueryText
         search= findViewById(R.id.search);
         search.setOnQueryTextListener(this);
 
-        btnatrasinicio=findViewById(R.id.btnatrasinicio);
         btnoferta= findViewById(R.id.btnoferta);
         btnfactura=findViewById(R.id.btnfactura);
         btnjuegos=findViewById(R.id.btnjuegos);
@@ -66,11 +66,14 @@ public class  Inicio extends AppCompatActivity implements SearchView.OnQueryText
         btnusuario=findViewById(R.id.btnusuario);
         recyclerView = findViewById(R.id.recycler2);
 
-
-
-
-        tvsalir();
         presenter= new Presentador(this);
+        
+        //cargar los datos de la api al inicio en xbox
+        if(!cargarDatos){
+            enviarBusqueda("xbox");
+            cargarDatos=true;
+        }
+
 
         btnoferta.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -157,38 +160,6 @@ public class  Inicio extends AppCompatActivity implements SearchView.OnQueryText
 
     }
 
-    //Metodo salir
-    public void tvsalir(){
-        btnatrasinicio.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AlertDialog.Builder alerta = new AlertDialog.Builder(Inicio.this);
-                alerta.setMessage("Desea salir")
-                        .setCancelable(false)
-
-                        .setPositiveButton("SI", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                //onBackPressed();
-                                Intent i1=new Intent(getApplicationContext(),MainActivity.class);
-                                startActivity(i1);
-
-                            }
-                        })
-                        .setNegativeButton("NO", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                dialogInterface.cancel();
-                            }
-                        });
-                AlertDialog titulo= alerta.create();
-                titulo.setTitle("Desea Salir");
-                titulo.show();
-
-
-            }
-        });
-    }
     //Bloquear atras
     @Override
     public void onBackPressed() {
@@ -222,4 +193,30 @@ public class  Inicio extends AppCompatActivity implements SearchView.OnQueryText
         recyclerView.setAdapter(adaptadorInicio);
 
     }
+
+    public void tvsalir(View view) {
+        AlertDialog.Builder alerta = new AlertDialog.Builder(Inicio.this);
+        alerta.setMessage("Desea salir")
+                .setCancelable(false)
+
+                .setPositiveButton("SI", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        //onBackPressed();
+                        Intent i1=new Intent(getApplicationContext(),MainActivity.class);
+                        startActivity(i1);
+
+                    }
+                })
+                .setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+        AlertDialog titulo= alerta.create();
+        titulo.setTitle("Desea Salir");
+        titulo.show();
+    }
+
 }

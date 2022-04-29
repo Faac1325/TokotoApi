@@ -1,6 +1,8 @@
 package fabian.arevalo.tokotoapi.Modelo;
 
-public class ProductoAttributes {
+import java.io.Serializable;
+
+public class ProductoAttributes implements Serializable {
     private String value_name;
     private String name;
 

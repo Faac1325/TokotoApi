@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,10 +41,12 @@ public class MainActivity extends AppCompatActivity implements Interfaces.VistaR
         etpass=findViewById(R.id.etpass);
         btnlogin=findViewById(R.id.btnlogin);
         tvinscribete=findViewById(R.id.tvinscribete);
-        btnatraslogin=findViewById(R.id.btnatraslogin);
         btngoogle=findViewById(R.id.btngoogle);
         btnfacebook= findViewById(R.id.btnfacebook);
         btntwitter=findViewById(R.id.btntwitter);
+
+
+
 
 
         tvolvidar=findViewById(R.id.tvolvidar);
@@ -59,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements Interfaces.VistaR
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, Registro.class);
                 startActivity(i);
-                onBackPressed();
+
             }
         });
 
@@ -70,22 +73,12 @@ public class MainActivity extends AppCompatActivity implements Interfaces.VistaR
                 ;
             }
         });
-        btnatraslogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i= new Intent(MainActivity.this, Splash_screen.class);
-                startActivity(i);
-                onBackPressed();
-
-            }
-        });
 
         tvolvidar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i= new Intent(MainActivity.this,Olvidar.class);
                 startActivity(i);
-                finish();
 
             }
         });
@@ -125,11 +118,8 @@ public class MainActivity extends AppCompatActivity implements Interfaces.VistaR
         }
 
     }
-    //Bloquear atras
-    @Override
-    public void onBackPressed() {
-        /*super.onBackPressed();*/
+
+    public void salirinicio(View view) {
+
     }
-
-
 }

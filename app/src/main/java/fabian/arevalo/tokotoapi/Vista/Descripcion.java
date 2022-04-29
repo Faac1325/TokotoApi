@@ -48,7 +48,7 @@ public class Descripcion extends AppCompatActivity {
 
         imagen.setImageResource(bundle.getInt("foto"));
         String imagenObtenida=bundle.getString("foto");
-        Glide.with(this).load(imagenObtenida).centerCrop().circleCrop().diskCacheStrategy(DiskCacheStrategy.ALL).into(imagen);
+        Glide.with(this).load(imagenObtenida).diskCacheStrategy(DiskCacheStrategy.ALL).into(imagen);
         titulo.setText(bundle.getString("titulo"));
         precio.setText(bundle.getString("precio"));
 

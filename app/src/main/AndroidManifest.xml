@@ -21,6 +21,9 @@
             android:name=".Vista.Inicio"
             android:exported="false" />
         <activity
+            android:name=".Vista.Descripcion"
+            android:exported="false" />
+        <activity
             android:name=".Vista.Registro"
             android:exported="false" />
         <activity

@@ -19,12 +19,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.039">
 
-        <Button
-            android:id="@+id/btnatrasregistrar"
-            android:layout_width="15dp"
-            android:layout_height="24dp"
+        <ImageView
+            android:id="@+id/registraratras"
+            android:layout_width="20dp"
+            android:layout_height="40dp"
             android:layout_marginEnd="80dp"
-            android:background="@drawable/ic_back_icon" />
+            android:background="@drawable/ic_back_icon"
+            android:onClick="regresar" />
 
         <TextView
             android:id="@+id/tvininscribirse"
@@ -38,7 +39,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="410dp"
+        android:layout_width="match_parent"
         android:layout_height="165dp"
         android:gravity="center"
         android:orientation="vertical"
@@ -73,7 +74,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="406dp"
+        android:layout_width="match_parent"
         android:layout_height="347dp"
         android:gravity="center"
         android:orientation="vertical"
@@ -193,7 +194,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout5"
-        android:layout_width="220dp"
+        android:layout_width="match_parent"
         android:layout_height="41dp"
         android:layout_marginStart="100dp"
         android:layout_marginEnd="100dp"
@@ -209,46 +210,48 @@
         <androidx.cardview.widget.CardView
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:paddingEnd="20dp"
             app:cardBackgroundColor="#ECECED"
-            app:cardCornerRadius="20dp"
-            android:paddingEnd="20dp">
+            app:cardCornerRadius="20dp">
 
             <ImageButton
                 android:id="@+id/btngoogle"
                 android:layout_width="15dp"
                 android:layout_height="15dp"
                 android:layout_gravity="center"
-                android:background="@drawable/ic_google_icon"/>
+                android:background="@drawable/ic_google_icon" />
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
             android:layout_width="30dp"
             android:layout_height="30dp"
-            app:cardBackgroundColor="#ECECED"
-            app:cardCornerRadius="20dp"
+            android:layout_marginStart="10dp"
             android:paddingEnd="20dp"
-            android:layout_marginStart="10dp">
+            app:cardBackgroundColor="#ECECED"
+            app:cardCornerRadius="20dp">
 
             <ImageButton
                 android:id="@+id/btnfacebook"
                 android:layout_width="15dp"
                 android:layout_height="15dp"
                 android:layout_gravity="center"
-                android:background="@drawable/ic_facebook_2"/>
+                android:background="@drawable/ic_facebook_2" />
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
             android:layout_width="30dp"
             android:layout_height="30dp"
-            app:cardBackgroundColor="#ECECED"
-            app:cardCornerRadius="20dp"
+            android:layout_marginStart="10dp"
             android:paddingEnd="20dp"
-            android:layout_marginStart="10dp">
+            app:cardBackgroundColor="#ECECED"
+            app:cardCornerRadius="20dp">
 
             <ImageButton
                 android:id="@+id/btntwitter"
                 android:layout_width="15dp"
                 android:layout_height="15dp"
                 android:layout_gravity="center"
-                android:background="@drawable/ic_twitter"/>
+                android:background="@drawable/ic_twitter" />
         </androidx.cardview.widget.CardView>
     </LinearLayout>
 
