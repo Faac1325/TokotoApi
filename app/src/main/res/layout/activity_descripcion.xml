@@ -132,6 +132,7 @@
         android:backgroundTint="#F77547"
         android:padding="15dp"
         android:text="Añadir al carrito"
+        android:onClick="btncomprar"
         android:textColor="@color/white"
         app:cornerRadius="20dp" />
 

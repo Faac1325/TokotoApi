@@ -1,25 +1,18 @@
-package fabian.arevalo.tokotoapi;
+package fabian.arevalo.tokotoapi.Vista;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ContentValues;
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import fabian.arevalo.tokotoapi.Conexionbd.AdminSQLiteOpenHelper;
+
 import fabian.arevalo.tokotoapi.Interfaces.Interfaces;
 import fabian.arevalo.tokotoapi.Presentador.Presentador;
-import fabian.arevalo.tokotoapi.Vista.Inicio;
-import fabian.arevalo.tokotoapi.Vista.MainActivity;
-import fabian.arevalo.tokotoapi.Vista.Registro;
+import fabian.arevalo.tokotoapi.R;
 
 public class Olvidar extends AppCompatActivity implements Interfaces.VistaRegistro  {
 

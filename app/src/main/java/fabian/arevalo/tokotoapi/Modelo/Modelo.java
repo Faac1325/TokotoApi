@@ -4,8 +4,10 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import fabian.arevalo.tokotoapi.Conexionbd.AdminSQLiteOpenHelper;
 import fabian.arevalo.tokotoapi.Interfaces.Interfaces;
@@ -245,9 +247,48 @@ public class Modelo implements Interfaces.ModeloRegistro, Interfaces.ModeloInici
 
             @Override
             public void onFailure(Call<Producto> call, Throwable t) {
-               /* procesoFallido();
-                mensajeError();*/
+
             }
         });
     }
+
+    @Override
+    public void requestCategorias(String id_pais) {
+        try {
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl("https://api.mercadolibre.com/")
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+
+            ServicioApi service = retrofit.create(ServicioApi.class);
+            Call<List<Category>> listaCategorias= service.getCategory(id_pais);
+            listaCategorias.enqueue(new Callback<List<Category>>() {
+                @Override
+                public void onResponse(Call<List<Category>> call, Response<List<Category>> response) {
+                    if (response.isSuccessful()) {
+                        List<Category> listCategory=response.body();
+                        if (listCategory != null) {
+                            successfulQuery(listCategory);
+
+                        } else {
+                            Log.e("CategoryInteractor", "Response is null");
+                        }
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<List<Category>> call, Throwable t) {
+                    Log.e("CategoryInteractor", "onFailure  falla el consumo"+t.toString());
+                }
+            });
+        }catch (Exception e){
+            Log.e("CategoryInteractor", "Error consumo"+e.toString());
+        }
+    }
+
+    @Override
+    public void successfulQuery(List<Category> categories) {
+        presentadorInicio.successfulQuery(categories);
+    }
+
 }

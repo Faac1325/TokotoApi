@@ -11,13 +11,15 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import fabian.arevalo.tokotoapi.Adaptadores.AdaptadorCategorias;
 import fabian.arevalo.tokotoapi.Adaptadores.AdaptadorInicio;
 import fabian.arevalo.tokotoapi.Interfaces.Interfaces;
+import fabian.arevalo.tokotoapi.Modelo.Category;
 import fabian.arevalo.tokotoapi.Modelo.ProductoResults;
 import fabian.arevalo.tokotoapi.Presentador.Presentador;
 import fabian.arevalo.tokotoapi.R;
@@ -28,7 +30,8 @@ public class  Inicio extends AppCompatActivity implements SearchView.OnQueryText
 
     androidx.appcompat.widget.SearchView search;
     private AdaptadorInicio adaptadorInicio;
-    private RecyclerView recyclerView;
+    private AdaptadorCategorias adaptadorCategorias;
+    private RecyclerView recyclerView, recyclerView2;
     private boolean cargarDatos;
 
     private Presentador presenter;
@@ -65,6 +68,7 @@ public class  Inicio extends AppCompatActivity implements SearchView.OnQueryText
         btnmensaje=findViewById(R.id.btnmensaje);
         btnusuario=findViewById(R.id.btnusuario);
         recyclerView = findViewById(R.id.recycler2);
+        recyclerView2= findViewById(R.id.recycler1);
 
         presenter= new Presentador(this);
         
@@ -73,6 +77,8 @@ public class  Inicio extends AppCompatActivity implements SearchView.OnQueryText
             enviarBusqueda("xbox");
             cargarDatos=true;
         }
+
+        requestCategorias("MCO");
 
 
         btnoferta.setOnClickListener(new View.OnClickListener() {
@@ -194,6 +200,23 @@ public class  Inicio extends AppCompatActivity implements SearchView.OnQueryText
 
     }
 
+    @Override
+    public void requestCategorias(String id_pais) {
+        presenter.requestCategorias(id_pais);
+
+    }
+
+    @Override
+    public void successfulQuery(List<Category> categories) {
+        System.out.println("DIEGO el resultado de la consulta es: "+categories);
+        adaptadorCategorias= new AdaptadorCategorias(categories,this);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
+        recyclerView2.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView2.setLayoutManager(linearLayoutManager);
+        recyclerView2.setAdapter(adaptadorCategorias);
+
+    }
+
     public void tvsalir(View view) {
         AlertDialog.Builder alerta = new AlertDialog.Builder(Inicio.this);
         alerta.setMessage("Desea salir")
@@ -219,4 +242,8 @@ public class  Inicio extends AppCompatActivity implements SearchView.OnQueryText
         titulo.show();
     }
 
+    public void carrocompras(View view) {
+        Intent i = new Intent(getApplicationContext(), Historial.class);
+        startActivity(i);
+    }
 }

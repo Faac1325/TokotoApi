@@ -51,7 +51,8 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
-                android:background="@drawable/ic_cart_icon"/>
+                android:background="@drawable/ic_cart_icon"
+                android:onClick="carrocompras"/>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView

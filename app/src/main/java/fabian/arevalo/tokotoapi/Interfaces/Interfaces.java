@@ -5,7 +5,9 @@ import android.provider.ContactsContract;
 import android.provider.SearchRecentSuggestions;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import fabian.arevalo.tokotoapi.Modelo.Category;
 import fabian.arevalo.tokotoapi.Modelo.ProductoResults;
 
 public interface Interfaces {
@@ -32,15 +34,21 @@ public interface Interfaces {
     interface VistaInicio {
         void enviarBusqueda(String q);
         void mostrarProductos(ArrayList<ProductoResults> productos);
+       void  requestCategorias(String id_pais);
+        void successfulQuery(List<Category> categories);
     }
 
     interface PresentadorInicio {
         void recibirBusqueda(String q);
         void procesoExitoso(ArrayList<ProductoResults> productos);
+        void  requestCategorias(String id_pais);
+        void successfulQuery(List<Category> categories);
     }
 
     interface ModeloInicio{
         void recibirBusqueda(String q);
+        void  requestCategorias(String id_pais);
+        void successfulQuery(List<Category> categories);
 
     }
 }

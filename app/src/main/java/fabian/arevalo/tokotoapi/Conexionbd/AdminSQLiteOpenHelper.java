@@ -15,12 +15,13 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("create table  userbd(id_user integer primary key autoincrement not null, correo text not null, clave text not null)");
-
+        sqLiteDatabase.execSQL("create table histouser(id_his integer primary key autoincrement not null, nombre text,precio text, foto text)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("create table userbd(id_user integer primary key autoincrement not null,  correo text not null, clave text not null)");
+        sqLiteDatabase.execSQL("create table histouser(id_his integer primary key autoincrement not null, nombre text,precio text, foto text)");
 
 
     }

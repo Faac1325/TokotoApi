@@ -1,7 +1,11 @@
 package fabian.arevalo.tokotoapi.Vista;
 
+import android.content.ContentValues;
+import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,6 +19,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import java.util.ArrayList;
 
 import fabian.arevalo.tokotoapi.Adaptadores.AdapterDescripcion;
+import fabian.arevalo.tokotoapi.Conexionbd.AdminSQLiteOpenHelper;
 import fabian.arevalo.tokotoapi.Modelo.ProductoAttributes;
 import fabian.arevalo.tokotoapi.R;
 
@@ -26,6 +31,7 @@ public class Descripcion extends AppCompatActivity {
     private AdapterDescripcion adaptadorDescripcion;
     private TextView titulo, precio;
     private ImageView imagen, atras;
+    Button comprar;
     ArrayList<ProductoAttributes> attributes;
 
 
@@ -40,6 +46,7 @@ public class Descripcion extends AppCompatActivity {
         precio= findViewById(R.id.precio);
         imagen= findViewById(R.id.imagen);
         atras= findViewById(R.id.atrasdescripcion);
+        comprar=findViewById(R.id.btncomprar);
 
         attributes=(ArrayList<ProductoAttributes>)bundle.getSerializable("caracteristicas");
         recyclerDescripcion.setLayoutManager(new LinearLayoutManager(this));
@@ -59,6 +66,9 @@ public class Descripcion extends AppCompatActivity {
             }
         });
 
+
+
+
    }
     @Override
     public void onBackPressed() {
@@ -66,4 +76,20 @@ public class Descripcion extends AppCompatActivity {
     }
 
 
+    public void btncomprar(View view) {
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(getApplicationContext(), "registros", null, 1);
+        SQLiteDatabase db = admin.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        String imagenObtenida=bundle.getString("foto");
+        System.out.println("ROQUE "+imagenObtenida);
+        values.put("nombre",bundle.getString("titulo"));
+        values.put("precio", bundle.getString("precio"));
+        values.put("foto",imagenObtenida);
+
+        db.insert("histouser", null, values);
+        db.close();
+        Intent i = new Intent(getApplicationContext(), Inicio.class);
+        startActivity(i);
+    }
 }

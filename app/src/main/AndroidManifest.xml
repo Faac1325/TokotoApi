@@ -12,10 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TokotoApi">
         <activity
-            android:name=".Historial"
+            android:name=".Vista.Historial"
             android:exported="false" />
         <activity
-            android:name=".Olvidar"
+            android:name=".Vista.Olvidar"
             android:exported="false" />
         <activity
             android:name=".Vista.Inicio"

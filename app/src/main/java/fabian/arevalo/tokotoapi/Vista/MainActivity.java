@@ -10,12 +10,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import fabian.arevalo.tokotoapi.Interfaces.Interfaces;
-import fabian.arevalo.tokotoapi.Olvidar;
 import fabian.arevalo.tokotoapi.Presentador.Presentador;
 import fabian.arevalo.tokotoapi.R;
 

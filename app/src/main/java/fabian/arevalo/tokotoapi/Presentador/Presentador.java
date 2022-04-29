@@ -3,8 +3,10 @@ package fabian.arevalo.tokotoapi.Presentador;
 import android.content.Context;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import fabian.arevalo.tokotoapi.Interfaces.Interfaces;
+import fabian.arevalo.tokotoapi.Modelo.Category;
 import fabian.arevalo.tokotoapi.Modelo.Modelo;
 import fabian.arevalo.tokotoapi.Modelo.ProductoResults;
 import fabian.arevalo.tokotoapi.Vista.Inicio;
@@ -57,5 +59,15 @@ public class Presentador implements Interfaces.PresentadorRegistro, Interfaces.P
     public void procesoExitoso(ArrayList<ProductoResults> productos) {
         view2.mostrarProductos(productos);
 
+    }
+
+    @Override
+    public void requestCategorias(String id_pais) {
+        model2.requestCategorias(id_pais);
+    }
+
+    @Override
+    public void successfulQuery(List<Category> categories) {
+        view2.successfulQuery(categories);
     }
 }
