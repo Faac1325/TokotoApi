@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Inicio">
+    tools:context=".Vista.Inicio">
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -18,17 +19,25 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.039">
 
-        <SearchView
+        <ImageView
+            android:id="@+id/tvsalirinicio"
+            android:layout_width="20dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="15dp"
+            android:onClick="tvsalir"
+            android:background="@drawable/ic_back_icon"
+            tools:ignore="OnClick" />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search"
             android:layout_width="183dp"
             android:layout_height="match_parent"
-            android:layout_marginEnd="40dp"
+            android:layout_marginEnd="20dp"
             app:cardBackgroundColor="#ECECED"
             android:background="@drawable/botones">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </SearchView>
+
+        </androidx.appcompat.widget.SearchView>
 
         <androidx.cardview.widget.CardView
             android:layout_width="40dp"
@@ -42,7 +51,8 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
-                android:background="@drawable/ic_cart_icon"/>
+                android:background="@drawable/ic_cart_icon"
+                android:onClick="carrocompras"/>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -61,24 +71,25 @@
         </androidx.cardview.widget.CardView>
     </LinearLayout>
 
+
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="414dp"
-        android:layout_height="126dp"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.158">
+        app:layout_constraintVertical_bias="0.146">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="100dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
             android:background="@drawable/botones"
             android:paddingEnd="10dp"
             app:cardBackgroundColor="#C6C6CA"
@@ -87,7 +98,7 @@
             <ImageButton
                 android:id="@+id/fondo1"
                 android:layout_width="wrap_content"
-                android:layout_height="97dp"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:background="@drawable/ic_fondo1" />
 
@@ -115,10 +126,9 @@
 
     </LinearLayout>
 
-
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="411dp"
+        android:layout_width="match_parent"
         android:layout_height="59dp"
         android:gravity="center"
         android:orientation="horizontal"
@@ -127,17 +137,17 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.341">
+        app:layout_constraintVertical_bias="0.319">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:paddingEnd="20dp"
             app:cardBackgroundColor="#F9E6D9"
             app:cardCornerRadius="10dp">
 
             <ImageButton
-                android:id="@+id/btnflash"
+                android:id="@+id/btnoferta"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
@@ -145,14 +155,14 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_marginStart="18dp"
             app:cardBackgroundColor="#F9E6D9"
             app:cardCornerRadius="10dp">
 
             <ImageButton
-                android:id="@+id/btnbill"
+                android:id="@+id/btnfactura"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
@@ -160,15 +170,15 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_marginStart="18dp"
             android:paddingEnd="20dp"
             app:cardBackgroundColor="#F9E6D9"
             app:cardCornerRadius="10dp">
 
             <ImageButton
-                android:id="@+id/btngames"
+                android:id="@+id/btnjuegos"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
@@ -176,14 +186,14 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_marginStart="18dp"
             app:cardBackgroundColor="#F9E6D9"
             app:cardCornerRadius="10dp">
 
             <ImageButton
-                android:id="@+id/btnndaily"
+                android:id="@+id/btnregalo"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
@@ -191,15 +201,15 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_marginStart="18dp"
             android:paddingEnd="20dp"
             app:cardBackgroundColor="#F9E6D9"
             app:cardCornerRadius="10dp">
 
             <ImageButton
-                android:id="@+id/btnmore"
+                android:id="@+id/btnmas"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
@@ -208,57 +218,89 @@
 
     </LinearLayout>
 
-
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="288dp"
-        android:layout_height="19dp"
+        android:layout_width="match_parent"
+        android:layout_height="23dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.569"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.404">
+        app:layout_constraintVertical_bias="0.385">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:text="Oferta " />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="20dp"
             android:text="Factura" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="20dp"
             android:text="Juego" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:text="Regalo diario" />
+            android:layout_marginEnd="20dp"
+            android:text="Regalo" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
             android:text="Más" />
+    </LinearLayout>
 
+
+    <LinearLayout
+        android:id="@+id/linearLayout9"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.425">
+
+        <TextView
+            android:id="@+id/tvinicio3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="90dp"
+            android:text="Especial para usted"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvinicio4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="Ver más" />
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout5"
-        android:layout_width="412dp"
-        android:layout_height="144dp"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -266,13 +308,71 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.618">
+        app:layout_constraintVertical_bias="0.538">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout6"
-        android:layout_width="351dp"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.659">
+
+        <TextView
+            android:id="@+id/tvinicio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="90dp"
+            android:text="Productos populares"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvinicio2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="Ver más" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.83">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout8"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/botones"
         android:backgroundTint="#EBF6F5F5"
@@ -282,7 +382,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.951">
+        app:layout_constraintVertical_bias="0.976">
 
         <androidx.cardview.widget.CardView
             android:layout_width="40dp"
@@ -323,7 +423,7 @@
             app:cardCornerRadius="10dp">
 
             <ImageButton
-                android:id="@+id/btnmesaje"
+                android:id="@+id/btnmensaje"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"

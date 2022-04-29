@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Vista.Descripcion">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="15dp">
+        <ImageView
+            android:id="@+id/atrasdescripcion"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_back_icon"
+
+            android:padding="6dp"></ImageView>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="320dp"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="25dp">
+
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:text="4.5"
+            android:gravity="center"
+            android:paddingStart="5dp"
+            android:textStyle="bold"></TextView>
+
+        <ImageView
+            android:id="@+id/estrella"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="40dp"
+            android:src="@drawable/ic_star_icon"
+            android:paddingEnd="5dp"></ImageView>
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/imagen"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:layout_marginTop="20dp"
+        android:src="@mipmap/ic_launcher"></ImageView>
+
+    <LinearLayout
+        android:id="@+id/l1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imagen"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:gravity="center_horizontal"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"></TextView>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ultimolinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/l1"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="-1dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="$"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"></TextView>
+
+
+        <TextView
+            android:id="@+id/precio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="25dp"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"></TextView>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvdescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ultimolinear"
+        android:layout_marginTop="19dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <Button
+        android:id="@+id/btncomprar"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="640dp"
+        android:layout_marginEnd="40dp"
+        android:backgroundTint="#F77547"
+        android:padding="15dp"
+        android:text="Añadir al carrito"
+        android:onClick="btncomprar"
+        android:textColor="@color/white"
+        app:cornerRadius="20dp" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="411dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="540dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:paddingEnd="20dp"
+            app:cardBackgroundColor="#EE615D"
+            app:cardCornerRadius="30dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="18dp"
+            app:cardBackgroundColor="#816CB3"
+            app:cardCornerRadius="30dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="18dp"
+            android:paddingEnd="20dp"
+            app:cardBackgroundColor="#D7C599"
+            app:cardCornerRadius="30dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="18dp"
+            app:cardBackgroundColor="#F0F0F0"
+            app:cardCornerRadius="30dp" />
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="35dp"
+            android:padding="10dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="30dp">
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="20dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="30dp" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

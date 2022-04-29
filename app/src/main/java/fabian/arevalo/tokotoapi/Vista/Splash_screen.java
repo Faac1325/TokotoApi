@@ -1,24 +1,21 @@
-package fabian.arevalo.tokotoapi;
+package fabian.arevalo.tokotoapi.Vista;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.window.SplashScreen;
 
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 
-import java.util.List;
+import fabian.arevalo.tokotoapi.Adaptadores.SliderAdapter;
+import fabian.arevalo.tokotoapi.R;
 
 public class Splash_screen extends AppCompatActivity {
      Button btnsplash;

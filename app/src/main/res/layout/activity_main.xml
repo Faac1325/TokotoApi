@@ -4,41 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Vista.MainActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:gravity="center"
+        android:layout_height="wrap_content"
+       android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.039">
+        app:layout_constraintVertical_bias="0.039"
+        >
 
-        <Button
-            android:id="@+id/btnatraslogin"
-            android:layout_width="10dp"
-            android:layout_height="20dp"
-            android:layout_marginEnd="90dp"
-            android:background="@drawable/ic_back_icon" />
 
         <TextView
             android:id="@+id/tviniciosesion"
             android:layout_width="101dp"
             android:layout_height="19dp"
-            android:layout_marginEnd="150dp"
-            android:text="Inicio de Sesión" />
+            android:text="Inicio de Sesión"/>
 
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="410dp"
+        android:layout_width="match_parent"
         android:layout_height="165dp"
         android:gravity="center"
         android:orientation="vertical"
@@ -47,7 +41,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.193">
+        app:layout_constraintVertical_bias="0.118">
 
         <TextView
             android:id="@+id/tvbienvenido"
@@ -77,10 +71,10 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.693">
+        app:layout_constraintVertical_bias="0.587">
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -154,7 +148,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvolvido"
+                android:id="@+id/tvolvidar"
                 android:layout_width="179dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -186,7 +180,7 @@
         android:id="@+id/tvcuenta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="48dp"
         android:text="¿No tienes una cuenta?"
         android:textColor="#999999"
         android:textStyle="bold"
@@ -199,19 +193,19 @@
         android:id="@+id/tvinscribete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="48dp"
         android:text="! Regístrate !"
         android:textColor="#F77547"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintHorizontal_bias="0.126"
         app:layout_constraintStart_toEndOf="@+id/tvcuenta" />
 
     <LinearLayout
         android:id="@+id/linearLayout5"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_width="220dp"
+        android:layout_height="41dp"
         android:layout_marginStart="100dp"
         android:layout_marginEnd="100dp"
         android:gravity="center"
@@ -221,32 +215,54 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.898">
+        app:layout_constraintVertical_bias="0.902">
 
-        <ImageButton
-            android:id="@+id/button4"
-            android:layout_width="16dp"
-            android:layout_height="20dp"
-            android:layout_marginHorizontal="10dp"
-            android:background="@drawable/ic_google_icon" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:cardBackgroundColor="#ECECED"
+            app:cardCornerRadius="20dp"
+            android:paddingEnd="20dp">
 
-        <ImageButton
-            android:id="@+id/button2"
-            android:layout_width="16dp"
-            android:layout_height="20dp"
-            android:layout_marginHorizontal="10dp"
-            android:background="@drawable/ic_facebook_2" />
+            <ImageButton
+                android:id="@+id/btngoogle"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_google_icon"/>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:cardBackgroundColor="#ECECED"
+            app:cardCornerRadius="20dp"
+            android:paddingEnd="20dp"
+            android:layout_marginStart="10dp">
 
-        <ImageButton
-            android:id="@+id/button3"
-            android:layout_width="16dp"
-            android:layout_height="20dp"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/ic_twitter" />
+            <ImageButton
+                android:id="@+id/btnfacebook"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_facebook_2"/>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:cardBackgroundColor="#ECECED"
+            app:cardCornerRadius="20dp"
+            android:paddingEnd="20dp"
+            android:layout_marginStart="10dp">
+
+            <ImageButton
+                android:id="@+id/btntwitter"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_twitter"/>
+        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
