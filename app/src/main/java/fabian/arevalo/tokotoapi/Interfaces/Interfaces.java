@@ -36,6 +36,9 @@ public interface Interfaces {
         void mostrarProductos(ArrayList<ProductoResults> productos);
        void  requestCategorias(String id_pais);
         void successfulQuery(List<Category> categories);
+
+        void ocultarProductos();
+        void mensajeError();
     }
 
     interface PresentadorInicio {
@@ -43,6 +46,10 @@ public interface Interfaces {
         void procesoExitoso(ArrayList<ProductoResults> productos);
         void  requestCategorias(String id_pais);
         void successfulQuery(List<Category> categories);
+
+        void ocultarProducto();
+
+        void mensajeError();
     }
 
     interface ModeloInicio{

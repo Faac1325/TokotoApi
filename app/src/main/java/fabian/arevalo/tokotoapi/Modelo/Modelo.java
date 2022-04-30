@@ -212,6 +212,7 @@ public class Modelo implements Interfaces.ModeloRegistro, Interfaces.ModeloInici
         return camposllenos;
     }
 
+
     @Override
     public void recibirBusqueda(String q) {
 
@@ -229,8 +230,8 @@ public class Modelo implements Interfaces.ModeloRegistro, Interfaces.ModeloInici
             public void onResponse(Call<Producto> call, Response<Producto> response) {
 
                 if (!response.isSuccessful()) {
-                    /*procesoFallido();*/
-
+                    procesoFallido();
+                    System.out.println("Proceso fallido!");
                     return;
                 }
 
@@ -247,10 +248,21 @@ public class Modelo implements Interfaces.ModeloRegistro, Interfaces.ModeloInici
 
             @Override
             public void onFailure(Call<Producto> call, Throwable t) {
+                procesoFallido();
+                mensajeError();
 
             }
         });
     }
+
+    private void mensajeError() {
+        presentadorInicio.mensajeError();
+    }
+
+    private void procesoFallido() {
+        presentadorInicio.ocultarProducto();
+    }
+
 
     @Override
     public void requestCategorias(String id_pais) {

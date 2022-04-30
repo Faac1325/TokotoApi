@@ -12,6 +12,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +34,7 @@ public class  Inicio extends AppCompatActivity implements SearchView.OnQueryText
     private AdaptadorCategorias adaptadorCategorias;
     private RecyclerView recyclerView, recyclerView2;
     private boolean cargarDatos;
+    private TextView mensajeerror;
 
     private Presentador presenter;
 
@@ -69,6 +71,7 @@ public class  Inicio extends AppCompatActivity implements SearchView.OnQueryText
         btnusuario=findViewById(R.id.btnusuario);
         recyclerView = findViewById(R.id.recycler2);
         recyclerView2= findViewById(R.id.recycler1);
+        mensajeerror= findViewById(R.id.msjerror);
 
         presenter= new Presentador(this);
         
@@ -215,6 +218,20 @@ public class  Inicio extends AppCompatActivity implements SearchView.OnQueryText
         recyclerView2.setLayoutManager(linearLayoutManager);
         recyclerView2.setAdapter(adaptadorCategorias);
 
+    }
+
+    @Override
+    public void ocultarProductos() {
+        recyclerView2.setVisibility(View.GONE);
+        System.out.println("Ocultar productos");
+
+
+    }
+
+    @Override
+    public void mensajeError() {
+        recyclerView2.setVisibility(View.GONE);
+        mensajeerror.setVisibility(View.VISIBLE);
     }
 
     public void tvsalir(View view) {

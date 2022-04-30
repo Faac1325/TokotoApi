@@ -70,4 +70,16 @@ public class Presentador implements Interfaces.PresentadorRegistro, Interfaces.P
     public void successfulQuery(List<Category> categories) {
         view2.successfulQuery(categories);
     }
+
+    @Override
+    public void ocultarProducto() {
+        view2.ocultarProductos();
+
+    }
+
+    @Override
+    public void mensajeError() {
+        view2.mensajeError();
+
+    }
 }
