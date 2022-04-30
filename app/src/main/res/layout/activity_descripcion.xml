@@ -32,11 +32,11 @@
         android:layout_marginTop="25dp">
 
         <TextView
-            android:layout_width="30dp"
+            android:layout_width="41dp"
             android:layout_height="40dp"
-            android:text="4.5"
             android:gravity="center"
             android:paddingStart="5dp"
+            android:text="4.5"
             android:textStyle="bold"></TextView>
 
         <ImageView
@@ -46,6 +46,26 @@
             android:layout_marginStart="40dp"
             android:src="@drawable/ic_star_icon"
             android:paddingEnd="5dp"></ImageView>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="320dp"
+        android:layout_marginTop="310dp"
+        app:cardCornerRadius="10dp"
+        android:backgroundTint="#F7DFDF">
+
+
+        <ImageView
+            android:id="@+id/corazon"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="20dp"
+            android:paddingEnd="5dp"
+            android:src="@drawable/ic_heart_icon_2"></ImageView>
 
     </androidx.cardview.widget.CardView>
 
@@ -112,6 +132,7 @@
 
     </LinearLayout>
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvdescripcion"
         android:layout_width="match_parent"
@@ -130,16 +151,16 @@
         android:layout_marginTop="640dp"
         android:layout_marginEnd="40dp"
         android:backgroundTint="#F77547"
+        android:onClick="btncomprar"
         android:padding="15dp"
         android:text="Añadir al carrito"
-        android:onClick="btncomprar"
         android:textColor="@color/white"
         app:cornerRadius="20dp" />
 
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="411dp"
+        android:layout_width="match_parent"
         android:layout_height="59dp"
         android:layout_marginTop="540dp"
         android:gravity="center"
@@ -183,6 +204,13 @@
             app:cardBackgroundColor="#FFFFFF"
             app:cardCornerRadius="30dp">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="-"
+                android:textStyle="bold"></TextView>
+
 
         </androidx.cardview.widget.CardView>
 
@@ -191,7 +219,16 @@
             android:layout_height="35dp"
             android:layout_marginStart="20dp"
             app:cardBackgroundColor="#FFFFFF"
-            app:cardCornerRadius="30dp" />
+            app:cardCornerRadius="30dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="+"
+                android:textStyle="bold"></TextView>
+        </androidx.cardview.widget.CardView>
+
 
     </LinearLayout>
 

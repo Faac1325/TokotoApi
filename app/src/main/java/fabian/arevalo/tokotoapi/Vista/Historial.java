@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,10 +22,13 @@ import fabian.arevalo.tokotoapi.R;
 public class Historial extends AppCompatActivity {
     List<ListHistorial> elehistorial;
     private Cursor fila;
+    ImageView tvsalir;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_historial);
+
+        tvsalir=findViewById(R.id.atrashistorial);
 
 
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(getApplicationContext(), "registros", null, 1);
@@ -46,5 +51,9 @@ public class Historial extends AppCompatActivity {
         recyclerView.setAdapter(listadapHistorial);
         Collections.reverse(elehistorial);
 
+    }
+
+    public void ivsalir(View view) {
+        onBackPressed();
     }
 }

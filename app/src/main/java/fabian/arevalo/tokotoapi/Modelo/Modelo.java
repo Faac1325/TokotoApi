@@ -220,7 +220,7 @@ public class Modelo implements Interfaces.ModeloRegistro, Interfaces.ModeloInici
                 .baseUrl("https://api.mercadolibre.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-
+        //Llamamos a la interfa  de la clase donde esta GET
         ServicioApi service = retrofit.create(ServicioApi.class);
         Call<Producto> call = service.obtenerProductos(q);
 

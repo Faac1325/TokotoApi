@@ -208,7 +208,7 @@ public class  Inicio extends AppCompatActivity implements SearchView.OnQueryText
 
     @Override
     public void successfulQuery(List<Category> categories) {
-        System.out.println("DIEGO el resultado de la consulta es: "+categories);
+
         adaptadorCategorias= new AdaptadorCategorias(categories,this);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
         recyclerView2.setLayoutManager(new LinearLayoutManager(this));
@@ -228,7 +228,6 @@ public class  Inicio extends AppCompatActivity implements SearchView.OnQueryText
                         //onBackPressed();
                         Intent i1=new Intent(getApplicationContext(),MainActivity.class);
                         startActivity(i1);
-
                     }
                 })
                 .setNegativeButton("NO", new DialogInterface.OnClickListener() {
