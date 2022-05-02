@@ -1,5 +1,25 @@
 
+o
+?app/src/main/java/fabian/arevalo/tokotoapi/Vista/Historial.java,5\9\59451b04ad169f520f0a88a38235a2d995d877f8
+~
+Napp/src/main/java/fabian/arevalo/tokotoapi/Adaptadores/AdaptadorHistorial.java,d\7\d7410163f71f31b778c31fd25305d54d842a47fe
 y
 Iapp/src/main/java/fabian/arevalo/tokotoapi/Adaptadores/SliderAdapter.java,8\7\877f0abb3e9999af15abaa9ea173781b7d2a5ecd
-~
-Napp/src/main/java/fabian/arevalo/tokotoapi/Adaptadores/AdapterDescripcion.java,3\7\371017b7c776744997c2668fda0311d787d4cbad
+s
+Capp/src/main/java/fabian/arevalo/tokotoapi/Vista/Splash_screen.java,7\c\7cd578dc8f23c4090eee21c8468af289da063d1d
+n
+>app/src/main/java/fabian/arevalo/tokotoapi/Vista/Registro.java,c\2\c2f45123ed2f4c350c3be0f284cbf4c435c24141
+r
+Bapp/src/main/java/fabian/arevalo/tokotoapi/Vista/MainActivity.java,d\1\d1e181903f7ad7d439bec3b5c22ef78f3cf0356d
+m
+=app/src/main/java/fabian/arevalo/tokotoapi/Vista/Olvidar.java,4\9\49a21fcc0f71eb43f8459e16a6bd8e43d0256555
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+@
+app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
+o
+?app/src/main/java/fabian/arevalo/tokotoapi/Modelo/Producto.java,8\2\825addc3df42c6de6f13b086e464c92902d8f5d7
+y
+Iapp/src/main/java/fabian/arevalo/tokotoapi/Modelo/ProductoAttributes.java,8\b\8ba9e04a7e552fec987bb43f585cde06c59bd645
+v
+Fapp/src/main/java/fabian/arevalo/tokotoapi/Modelo/ProductoResults.java,6\3\63d9492aea1147929f432e8b62955d6142dea5f8

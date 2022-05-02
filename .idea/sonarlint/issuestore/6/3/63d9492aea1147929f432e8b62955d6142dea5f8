@@ -1,0 +1,10 @@
+
+‹
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ŒÎÓëıÿÿÿÿ
+€
+java:S1319"jThe type of "attributes" should be an interface such as "List" rather than the implementation "ArrayList".(È¿›Å
+f	java:S117-"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹Ş‘Ş
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(…×Å
+w	java:S116"]Rename this field "available_quantity" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(í‘§·øÿÿÿÿ
+h	java:S100)"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘Ñ¡”şÿÿÿÿ
+c	java:S100-"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹Ş‘Ş

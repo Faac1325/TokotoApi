@@ -13,6 +13,7 @@ public interface ServicioApi {
 
 
     @GET("sites/MCO/search?q=")
+    //Query esd como poner la busqueda
     Call<Producto> obtenerProductos(@Query("q") String q);
 
     @GET("/sites/{id}/categories")

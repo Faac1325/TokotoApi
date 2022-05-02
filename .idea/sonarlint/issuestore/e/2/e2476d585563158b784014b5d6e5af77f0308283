@@ -1,0 +1,24 @@
+
+e
+java:S1192*"JDefine a constant instead of duplicating this literal "registros" 4 times.(ãÃğ²ÿÿÿÿÿ
+j
+java:S1192’"SDefine a constant instead of duplicating this literal "CategoryInteractor" 3 times.(¡©Ó¤
+l	java:S117€"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õĞÃ·üÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(…×Å
+M
+java:S2589ğ"7Remove this expression which always evaluates to "true"(ŸüÈ
+n
+java:S1450"SRemove the "fila" field and declare it as a local variable in the relevant methods.(¡Í³äÿÿÿÿÿ
+m
+java:S3776'"RRefactor this method to reduce its Cognitive Complexity from 36 to the 15 allowed.(úŸû‡şÿÿÿÿ
+S
+java:S1117n"8Rename "fila" which hides the field declared at line 27.(â±æâıÿÿÿÿ
+>	java:S108w")Either remove or fill this block of code.(”ı¾
+O	java:S106¢"9Replace this use of System.out or System.err by a logger.(Ä ³è
+T
+java:S1117­"8Rename "fila" which hides the field declared at line 27.(¾Ê–äúÿÿÿÿ
+T	java:S106Á"9Replace this use of System.out or System.err by a logger.(…¾Ñøúÿÿÿÿ
+
+java:S1186ù"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(˜´Öªşÿÿÿÿ
+R	java:S125è"<This block of commented-out lines of code should be removed.(çÎÈŸ
+O	java:S106ò"9Replace this use of System.out or System.err by a logger.(‹âåØ

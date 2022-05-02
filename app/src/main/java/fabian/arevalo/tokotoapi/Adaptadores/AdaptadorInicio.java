@@ -41,7 +41,7 @@ public class AdaptadorInicio extends RecyclerView.Adapter<AdaptadorInicio.ViewHo
 
 
         holder.url= results.get(position).getThumbnail().replaceFirst("http","https");
-
+        //usamos glide para descargar la imagen
         Glide.with(context).load(holder.url).diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.foto);
 
         holder.itemView.setOnClickListener(view->{

@@ -177,13 +177,16 @@ public class  Inicio extends AppCompatActivity implements SearchView.OnQueryText
 
 
     @Override
+    //se llama cuando el usuario le da click a buscar
     public boolean onQueryTextSubmit(String q) {
         enviarBusqueda(q);
         return false;
     }
 
     @Override
+    //se llama cuando el usuario cambia la consulta
     public boolean onQueryTextChange(String newText) {
+
         return false;
     }
 

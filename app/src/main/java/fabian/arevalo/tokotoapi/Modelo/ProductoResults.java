@@ -8,12 +8,16 @@ public class ProductoResults {
     private String available_quantity;
     private String thumbnail;
 
+    //dentro de result esta atributes en pagina mercadolibre
+    //creo un arraylist y lo llamo attributes y va ser de tipo productoatributo
     ArrayList<ProductoAttributes> attributes;
 
+    //GET del Array
     public ArrayList<ProductoAttributes> getAttributes() {
+
         return attributes;
     }
-
+    // SET del Array
     public void setAttributes(ArrayList<ProductoAttributes> attributes) {
         this.attributes = attributes;
     }

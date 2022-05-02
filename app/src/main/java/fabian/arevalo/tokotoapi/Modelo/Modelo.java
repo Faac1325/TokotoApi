@@ -223,10 +223,12 @@ public class Modelo implements Interfaces.ModeloRegistro, Interfaces.ModeloInici
                 .build();
         //Llamamos a la interfa  de la clase donde esta GET
         ServicioApi service = retrofit.create(ServicioApi.class);
+        //creamos un call le pasamos el modelo"producto"
         Call<Producto> call = service.obtenerProductos(q);
 
         call.enqueue(new Callback<Producto>() {
             @Override
+            //onResponse se manejan las respuestas
             public void onResponse(Call<Producto> call, Response<Producto> response) {
 
                 if (!response.isSuccessful()) {
@@ -234,7 +236,7 @@ public class Modelo implements Interfaces.ModeloRegistro, Interfaces.ModeloInici
                     System.out.println("Proceso fallido!");
                     return;
                 }
-
+                // traemos los datos,le damos la respuesta del servidor
                 Producto datosProducto = response.body();
                 ArrayList<ProductoResults> productos = datosProducto.getResults();
 
@@ -247,6 +249,7 @@ public class Modelo implements Interfaces.ModeloRegistro, Interfaces.ModeloInici
             }
 
             @Override
+            //onfaliure vamos a manejar cualquier error o problema de internet
             public void onFailure(Call<Producto> call, Throwable t) {
                 procesoFallido();
                 mensajeError();
